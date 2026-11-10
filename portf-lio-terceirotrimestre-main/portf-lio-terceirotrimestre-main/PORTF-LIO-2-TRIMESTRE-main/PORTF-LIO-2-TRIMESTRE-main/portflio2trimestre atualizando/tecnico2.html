@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matérias Técnico - 2º Trimestre</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #000 !important; color: white; margin: 0; padding: 0; font-family: sans-serif; }
+        header { background-color: #000; padding: 40px 60px; }
+        .container-central { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; padding: 40px 0; }
+        .card {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 60px 30px;
+            width: 320px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: #a282ff; transform: scale(1.02); }
+        .card h2 { font-family: serif; font-size: 24px; margin-bottom: 15px; }
+        .card p { color: #555; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; }
+        .ativo { border-color: #a282ff; }
+        .ativo p { color: #a282ff; font-weight: bold; }
+        .alinhamento-esquerda { padding: 0 60px; text-align: left; }
+        .titulo-pagina { font-size: 55px; font-family: serif; margin: 40px 0; }
+        .titulo-pagina span { color: #a282ff; font-style: italic; }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-family: serif; font-style: italic; font-size: 24px; color: #a282ff;">ISABELLA TONDIM</div>
+        <hr style="border: 0; border-top: 1px solid #1a1a1a; margin-top: 20px;">
+    </header>
+
+    <main>
+        <div class="alinhamento-esquerda">
+            <a href="trimestre2.html" style="color: #a282ff; text-decoration: none; font-size: 14px; display: block; margin-top: 20px;">← Voltar para matérias</a>
+            <h1 class="titulo-pagina">Técnico <span>2º Trimestre</span></h1>
+        </div>
+
+        <div class="container-central">
+            <a href="logica2.html" class="card ativo">
+                <h2>IOT</h2>
+                <p>JOANA FAVORETTO</p>
+            </a>
+
+            <a href="samuel2.html" class="card ativo">
+                <h2>Modelagem de Sistemas</h2>
+                <p>SAMUEL</p>
+            </a>
+
+            <a href="willer2.html" class="card ativo">
+                <h2>Banco de Dados</h2>
+                <p>WILLER</p>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

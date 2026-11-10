@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella Catch | Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@400;600;700;800&display=swap');
+
+        :root {
+            --roxo: #9B6DFF;
+            --preto: #0a0a0a;
+            --cinza: #151515;
+            --branco: #F4F4F4;
+        }
+
+        body { 
+            margin: 0; background: var(--preto); color: var(--branco); 
+            font-family: 'Inter', sans-serif; 
+            height: 100vh; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+
+        /* HEADER PADRONIZADO IGUAL AO SEU SITE */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px); position: fixed; width: 90%; top: 0; z-index: 100;
+        }
+        .logo { font-family: 'Inter', sans-serif; font-weight: 800; color: white; text-decoration: none; letter-spacing: 2px; }
+        nav a { text-transform: uppercase; color: #fff; text-decoration: none; margin-left: 25px; font-size: 13px; transition: 0.3s; }
+        .btn-contato { border: 2px solid var(--roxo); padding: 8px 20px; border-radius: 50px; font-weight: bold; }
+
+        /* TELA INICIAL ESTILIZADA */
+        .container {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            background: radial-gradient(circle at center, #1a1030 0%, #0a0a0a 100%);
+            position: relative;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(155, 109, 255, 0.2);
+            padding: 50px; border-radius: 40px;
+            width: 400px; text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; font-style: italic; 
+            color: var(--roxo); font-size: 3.5rem; margin: 0 0 10px 0;
+            text-shadow: 0 0 20px rgba(155, 109, 255, 0.3);
+        }
+
+        .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+
+        input, select {
+            width: 100%; padding: 15px; margin-bottom: 15px;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(155, 109, 255, 0.3);
+            color: white; border-radius: 12px; font-size: 1rem; outline: none; transition: 0.3s;
+        }
+        input:focus, select:focus { border-color: var(--roxo); background: rgba(155, 109, 255, 0.1); }
+
+        .btn-play {
+            background: var(--roxo); color: var(--preto); border: none;
+            padding: 18px; width: 100%; border-radius: 12px;
+            font-weight: 800; font-size: 1.1rem; cursor: pointer;
+            transition: 0.4s; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .btn-play:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(155, 109, 255, 0.5); }
+
+        /* ELEMENTOS DO JOGO */
+        canvas { border-radius: 20px; border: 2px solid var(--roxo); display: none; background: #111; box-shadow: 0 0 40px rgba(0,0,0,0.8); }
+        .game-info { display: none; margin-bottom: 15px; font-weight: bold; font-size: 1.2rem; }
+        
+        /* INSTRUÇÕES LATERAIS */
+        .instructions {
+            position: absolute; left: 40px; bottom: 40px; width: 200px;
+            font-size: 0.8rem; color: #666; text-align: left;
+        }
+        .instructions b { color: var(--roxo); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ISABELLA TONDIM</a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Trabalhos</a>
+            <a href="sobre.html">Sobre mim</a>
+            <a href="jogo.html" style="font-weight: bold; color: var(--roxo);">🎮 Desafio</a>
+            <a href="contato.html" class="btn-contato">Fale Conosco</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="menuScreen" class="glass-card">
+            <h1>Isaquest</h1>
+            <p class="subtitle">Desafio para Professores</p>
+            
+            <input type="text" id="profName" placeholder="Seu nome completo">
+            <select id="profArea">
+                <option value="">Sua Área de Atuação</option>
+                <option value="Linguagens">Linguagens</option>
+                <option value="Matemática">Matemática</option>
+                <option value="Natureza">Ciências da Natureza</option>
+                <option value="Humanas">Ciências Humanas</option>
+                <option value="Técnico">Ensino Técnico</option>
+            </select>
+            
+            <button class="btn-play" onclick="startGame()">Iniciar Partida</button>
+        </div>
+
+        <div id="gameUI" style="display: none; text-align: center;">
+            <div class="game-info">
+                ÁREA: <span id="targetDisplay" style="color: var(--roxo);"></span> | 
+                PONTOS: <span id="currentScore" style="color: var(--roxo);">0</span>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="rankingScreen" class="glass-card" style="display: none;">
+            <h1 style="font-size: 2rem;">Ranking</h1>
+            <div id="rankingList" style="margin: 20px 0; text-align: left;"></div>
+            <button class="btn-play" onclick="location.reload()">Jogar Novamente</button>
+        </div>
+
+        <div class="instructions" id="inst">
+            <b>COMO JOGAR:</b> Use o mouse para mover o gatinho. Pegue apenas as palavras da sua área!
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+        const firebaseConfig = { databaseURL: "https://portfolio-isabella-default-rtdb.firebaseio.com" };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = 400; canvas.height = 500;
+
+        let name, area, score = 0, gameActive = false, items = [], playerX = 170;
+        const gatoImg = new Image(); gatoImg.src = 'gato.jpg';
+
+        const conteudos = {
+            "Linguagens": ["Sintaxe", "Semântica", "Morfologia", "Gênero Textual", "Variação Linguística"],
+            "Matemática": ["Logaritmo", "Derivada", "Matriz", "Probabilidade", "Trigonometria"],
+            "Natureza": ["Entropia", "Genética", "Citologia", "Evolução", "Bioenergética"],
+            "Humanas": ["Geopolítica", "Sociologia", "Globalização", "Existencialismo", "Imperialismo"],
+            "Técnico": ["Algoritmo", "Python", "Backend", "SQL", "Criptografia"]
+        };
+
+        function startGame() {
+            name = document.getElementById("profName").value;
+            area = document.getElementById("profArea").value;
+            if (!name || !area) return alert("Por favor, preencha seu nome e área.");
+
+            document.getElementById("menuScreen").style.display = "none";
+            document.getElementById("inst").style.display = "none";
+            document.getElementById("gameUI").style.display = "block";
+            canvas.style.display = "block";
+            document.querySelector(".game-info").style.display = "block";
+            document.getElementById("targetDisplay").innerText = area;
+
+            gameActive = true;
+            spawnItems();
+            draw();
+        }
+
+        canvas.addEventListener("mousemove", (e) => {
+            const rect = canvas.getBoundingClientRect();
+            playerX = e.clientX - rect.left - 30;
+        });
+
+        function spawnItems() {
+            if (!gameActive) return;
+            const areas = Object.keys(conteudos);
+            const isCorrect = Math.random() > 0.6;
+            let sorteioArea = isCorrect ? area : areas[Math.floor(Math.random() * areas.length)];
+            
+            items.push({
+                x: Math.random() * (canvas.width - 100) + 20,
+                y: -30,
+                text: conteudos[sorteioArea][Math.floor(Math.random() * conteudos[sorteioArea].length)],
+                isCorrect: sorteioArea === area,
+                speed: 3 + (score / 12)
+            });
+            setTimeout(spawnItems, Math.max(500, 900 - (score * 8)));
+        }
+
+        function draw() {
+            if (!gameActive) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Gato
+            if (gatoImg.complete) ctx.drawImage(gatoImg, playerX, 420, 65, 65);
+            else { ctx.fillStyle = "#9B6DFF"; ctx.fillRect(playerX, 420, 60, 60); }
+
+            items.forEach((item, i) => {
+                item.y += item.speed;
+                ctx.fillStyle = "#fff"; ctx.font = "bold 16px Inter";
+                ctx.fillText(item.text, item.x, item.y);
+
+                if (item.y > 420 && item.x > playerX - 20 && item.x < playerX + 60) {
+                    if (item.isCorrect) { score++; document.getElementById("currentScore").innerText = score; }
+                    else gameOver();
+                    items.splice(i, 1);
+                }
+                if (item.y > canvas.height) items.splice(i, 1);
+            });
+            requestAnimationFrame(draw);
+        }
+
+        function gameOver() {
+            gameActive = false;
+            db.ref('ranking').push({ name, area, score, timestamp: Date.now() });
+            showRanking();
+        }
+
+        function showRanking() {
+            canvas.style.display = "none";
+            document.querySelector(".game-info").style.display = "none";
+            document.getElementById("rankingScreen").style.display = "block";
+            const list = document.getElementById("rankingList");
+            
+            db.ref('ranking').orderByChild('score').limitToLast(5).once('value', (s) => {
+                let arr = []; s.forEach(child => { arr.push(child.val()); });
+                arr.reverse();
+                list.innerHTML = arr.map((r, i) => `<div style="padding:10px 0; border-bottom:1px solid #333; display:flex; justify-content:space-between">
+                    <span>${i+1}º ${r.name}</span><b>${r.score} pts</b>
+                </div>`).join('');
+            });
+        }
+    </script>
+</body>
+</html>

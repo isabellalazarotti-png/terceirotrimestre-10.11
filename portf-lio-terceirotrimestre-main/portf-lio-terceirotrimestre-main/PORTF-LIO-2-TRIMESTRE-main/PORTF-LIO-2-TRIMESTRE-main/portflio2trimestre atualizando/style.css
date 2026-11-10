@@ -1,0 +1,120 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+    
+    --bg-base: #FDFBFF;         
+    --bg-bloco-foto: #E6E0F8;  
+    --accent-lilas-vibrante: #9B6DFF; 
+    --accent-rosa-suave: #F8E6E0; 
+
+    --text-principal: #1A1A1A;   
+    --text-segundario: #4A4A4A;  
+    --text-light: #FFFFFF;      
+    
+    
+    --fonte-serifa: 'Cormorant Garamond', serif;
+    --fonte-sans: 'Inter', sans-serif;
+    
+   
+    --border-radius-moldura: 100px;
+    --border-radius-botao: 50px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-base);
+    font-family: var(--fonte-sans);
+    color: var(--text-principal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    background-color: var(--bg-base);
+}
+
+.logo {
+    font-family: var(--fonte-serifa);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-principal);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-lilas-vibrante);
+}
+
+.btn-contato {
+    background-color: var(--accent-lilas-vibrante);
+    color: var(--text-light);
+    padding: 12px 28px;
+    border-radius: var(--border-radius-botao);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-contato:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px lab(57.2% 49.69 -66.57 / 0.3);
+}
+
+
+.hero {
+    display: flex;
+    min-height: 85vh;
+    padding: 0 8%;
+}
+
+.col-texto {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 50px;
+}
+
+.col-texto h1 {
+    font-family: var(--fonte-serifa);
+    font-size: 5.5rem; 
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.col-texto p {
+    font-size: 1.2rem;
+    max-width: 450px;
+    margin-bottom: 45px;
+    color: var(--text-segundario);
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--accent-rosa-suave);
+}

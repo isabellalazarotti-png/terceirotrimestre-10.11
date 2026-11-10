@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanas | 1º Trimestre</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --preto-fundo: #0a0a0a;
+            --lilais-forte: #9B6DFF;
+            --lilais-escuro: #7A4DFF;
+            --branco-suave: #F4F4F4;
+            --cinza-card: #151515;
+            --fonte-destaque: 'Playfair Display', serif;
+            --fonte-sans: 'Inter', sans-serif;
+        }
+
+        body { 
+            font-family: var(--fonte-sans); 
+            background-color: var(--preto-fundo);
+            color: var(--branco-suave);
+            padding: 100px 8%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0; width: 100%; left: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(155, 109, 255, 0.2);
+        }
+
+        .logo { font-family: var(--fonte-destaque); font-size: 1.5rem; text-decoration: none; color: var(--lilais-forte); font-style: italic; }
+
+        .voltar {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--lilais-forte);
+            font-weight: 600;
+            margin-bottom: 30px;
+            margin-top: 50px;
+            transition: 0.3s;
+        }
+        .voltar:hover { opacity: 0.7; transform: translateX(-5px); }
+
+        h2 { font-family: var(--fonte-destaque); font-size: 3rem; font-style: italic; margin-bottom: 40px; }
+        h2 span { color: var(--lilais-forte); }
+
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card-projeto {
+            background: var(--cinza-card);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(155, 109, 255, 0.1);
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card-projeto:hover {
+            transform: translateY(-10px);
+            border-color: var(--lilais-forte);
+        }
+
+        .tag { color: var(--lilais-forte); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        h3 { margin: 5px 0; font-family: var(--fonte-destaque); color: var(--branco-suave); font-size: 1.5rem; }
+        p { color: #ccc; font-size: 0.95rem; line-height: 1.6; }
+
+        .btn-projeto {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--lilais-forte);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .btn-projeto:hover { text-decoration: underline; }
+
+        .competencias {
+            font-size: 0.8rem;
+            color: var(--lilais-forte);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ISABELLA TONDIM</a>
+    </header>
+
+    <a href="trimestre1.html" class="voltar">← Voltar para Matérias</a>
+    
+    <h2>Ciências <span>Humanas</span></h2>
+
+   <div class="grid-projetos">
+        
+        <div class="card-projeto">
+            <span class="tag">Lucas</span>
+            <h3>JORNAL DA ÉPOCA</h3>
+            <p>Para este trabalho, produzi um jornal inspirado em uma época histórica, buscando representar acontecimentos, linguagem e estilo característicos do período. A atividade permitiu compreender melhor o contexto histórico e como as informações eram transmitidas, além de desenvolver criatividade e senso crítico na construção das notícias.
+            <p>(Não consegui colocar o link para ir direto para o site, mas dentro do Canva ele está com o link original)</p>
+            </p>
+            <a href="https://canva.link/qnxfza13f43226v" target="_blank" class="btn-projeto">Ver Trabalho no Canva</a>
+            <p class="competencias">C3 - H15, H16, H20 - C6 - H39</p>
+        </div>
+
+        <div class="card-projeto">
+            <span class="tag">LUCAS</span>
+            <h3>LINHA DO TEMPO - DIFUSÃO TECNOLÓGICA 1850-1914</h3>
+            <p>Para este trabalho, elaborei um mapa em forma de linha do tempo sobre a difusão tecnológica, no qual também fiz ligações indicando onde cada tecnologia surgiu em diferentes lugares do mundo. A atividade ajudou a compreender como as inovações se espalham entre países e continentes, destacando a importância da troca de conhecimentos para o desenvolvimento tecnológico e social.</p>
+            <a href="https://canva.link/0ehe9dbv2ad2sny" target="_blank" class="btn-projeto">Ver Trabalho no Canva </a>
+            <p class="competencias">C2 - C3 - C4 - H10 - H16 - H21 - H22</p>
+        </div>
+
+        <div class="card-projeto">
+            <span class="tag">MARCUS</span>
+            <h3>VIETNÃ</h3>
+            <p>Para esta atividade em grupo sobre o Vietnã, produzimos slides com o objetivo de apresentar aspectos importantes do país, como sua cultura, história, economia e características geográficas. O trabalho nos ajudou a compreender melhor a realidade vietnamita e a desenvolver habilidades de pesquisa, organização de informações e trabalho em equipe.</p>
+            <a href="https://canva.link/avtd48fa6dqkxpn" target="_blank" class="btn-projeto">Ver Trabalho no Canva </a>
+            <p class="competencias">H16 - H21 - H22</p>
+        </div>
+
+    </div> 
+
+
+
+</body>
+</html>

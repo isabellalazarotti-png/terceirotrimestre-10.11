@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella Tondim | Portfólio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@400;700;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* TEXTO GIGANTE DE FUNDO */
+        .bg-text {
+            position: fixed;
+            font-size: 20vw;
+            font-weight: 900;
+            color: rgba(155, 109, 255, 0.03);
+            z-index: -1;
+            bottom: -5%;
+            right: -5%;
+            user-select: none;
+            text-transform: uppercase;
+        }
+
+        /* FAIXA LATERAL */
+        .faixa-lateral {
+            position: fixed; left: 0; top: 0; width: 60px; height: 100%;
+            background: #9B6DFF; z-index: 100; display: flex; align-items: center;
+        }
+        .texto-vertical {
+            transform: rotate(-90deg); color: #000; font-weight: 900;
+            font-size: 10px; letter-spacing: 5px; white-space: nowrap; width: 100%;
+            text-align: center;
+        }
+
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 40px 8%; position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+
+        .logo { font-weight: 900; color: #fff; text-decoration: none; letter-spacing: 2px; font-size: 1.1rem; }
+        
+        nav { display: flex; align-items: center; }
+        nav a { text-transform: uppercase; color: #fff; text-decoration: none; margin-left: 35px; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+        
+        .btn-contato-nav { border: 1px solid #9B6DFF; padding: 12px 28px; border-radius: 50px; color: #9B6DFF !important; transition: 0.4s; }
+        .btn-contato-nav:hover { background: #9B6DFF; color: #000 !important; box-shadow: 0 0 20px rgba(155, 109, 255, 0.3); }
+
+        /* SEÇÃO HERO - AJUSTADA PARA FOTO À DIREITA */
+        .hero {
+            display: flex; 
+            align-items: center; 
+            justify-content: flex-end; /* Empurra o conteúdo para a direita */
+            height: 100vh; 
+            padding: 0 8% 0 10%; 
+            position: relative;
+        }
+
+        .hero-info { 
+            position: absolute; 
+            left: 12%; 
+            z-index: 2; 
+        }
+
+        .hero-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            line-height: 0.8;
+            font-style: italic;
+        }
+
+        .hero-info h1 span.outline {
+            display: block;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            color: transparent;
+            margin-top: 10px;
+        }
+
+        .btn-projetos {
+            display: inline-block; margin-top: 50px; padding: 20px 40px;
+            background: #9B6DFF; color: #000; text-decoration: none;
+            font-weight: 900; border-radius: 5px; text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-projetos:hover { transform: translateY(-5px); box-shadow: 10px 10px 0 #fff; }
+
+        /* FOTO MENOR E POSICIONADA */
+        .hero-foto { 
+            position: relative; 
+            margin-right: 5%; 
+        }
+
+        .hero-foto img {
+            width: 320px; /* Foto menor como pedido */
+            border-radius: 15px;
+            filter: grayscale(100%); 
+            transition: 0.6s;
+            box-shadow: 15px 15px 0px -5px rgba(155, 109, 255, 0.2);
+        }
+
+        .hero-foto:hover img { filter: grayscale(0%); transform: scale(1.02); }
+
+        /* SELO CIRCULAR */
+        .badge {
+            position: absolute; top: -30px; right: -30px;
+            width: 100px; height: 100px;
+            background: #9B6DFF; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #000; font-weight: 900; font-size: 8px;
+            text-align: center; text-transform: uppercase;
+            animation: rotate 10s linear infinite;
+            z-index: 5; line-height: 1.2;
+        }
+
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* RESPONSIVO */
+        @media (max-width: 1100px) {
+            .hero { justify-content: center; padding: 0 5%; }
+            .hero-info { position: relative; left: 0; text-align: center; }
+            .hero-info h1 { font-size: 5rem; }
+            .hero-foto { display: none; } /* Esconde a foto em telas muito pequenas para não bugar */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-text">TONDIM</div>
+
+    <div class="faixa-lateral">
+        <div class="texto-vertical">EST. 2026 • PORTFOLIO</div>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo">ISABELLA T.</a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Trabalhos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="jogo.html" style="color: #9B6DFF;">🎮 desafio</a>
+            <a href="contato.html" class="btn-contato-nav">FALE COMIGO</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-info">
+            <h1>Isabella<span class="outline">Tondim</span></h1>
+            <a href="projetos.html" class="btn-projetos">EXPLORAR TRABALHOS ↓</a>
+        </div>
+        
+        <div class="hero-foto">
+            <div class="badge">SEJA <br>BEM VINDO(A)<br></div>
+            <img src="espelho.jpg" alt="Isabella Tondim">
+        </div>
+    </main>
+
+</body>
+</html>

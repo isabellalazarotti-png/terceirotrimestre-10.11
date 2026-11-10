@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanas | 1º Trimestre</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --preto-fundo: #0a0a0a;
+            --lilais-forte: #9B6DFF;
+            --lilais-escuro: #7A4DFF;
+            --branco-suave: #F4F4F4;
+            --cinza-card: #151515;
+            --fonte-destaque: 'Playfair Display', serif;
+            --fonte-sans: 'Inter', sans-serif;
+        }
+
+        body { 
+            font-family: var(--fonte-sans); 
+            background-color: var(--preto-fundo);
+            color: var(--branco-suave);
+            padding: 100px 8%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0; width: 100%; left: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(155, 109, 255, 0.2);
+        }
+
+        .logo { font-family: var(--fonte-destaque); font-size: 1.5rem; text-decoration: none; color: var(--lilais-forte); font-style: italic; }
+
+        .voltar {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--lilais-forte);
+            font-weight: 600;
+            margin-bottom: 30px;
+            margin-top: 50px;
+            transition: 0.3s;
+        }
+        .voltar:hover { opacity: 0.7; transform: translateX(-5px); }
+
+        h2 { font-family: var(--fonte-destaque); font-size: 3rem; font-style: italic; margin-bottom: 40px; }
+        h2 span { color: var(--lilais-forte); }
+
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card-projeto {
+            background: var(--cinza-card);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(155, 109, 255, 0.1);
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card-projeto:hover {
+            transform: translateY(-10px);
+            border-color: var(--lilais-forte);
+        }
+
+        .tag { color: var(--lilais-forte); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        h3 { margin: 5px 0; font-family: var(--fonte-destaque); color: var(--branco-suave); font-size: 1.5rem; }
+        p { color: #ccc; font-size: 0.95rem; line-height: 1.6; }
+
+        .btn-projeto {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--lilais-forte);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .btn-projeto:hover { text-decoration: underline; }
+
+        .competencias {
+            font-size: 0.8rem;
+            color: var(--lilais-forte);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ISABELLA TONDIM</a>
+    </header>
+
+    <a href="trimestre2.html" class="voltar">← Voltar para Matérias</a>
+    
+    <h2>Ciências da <span>Natureza</span></h2>
+
+   <div class="grid-projetos">
+        
+
+
+        <div class="card-projeto">
+            <span class="tag">ANA</span>
+            <h3>INFOGRÁFICO - MAGNETISMO NO MUNDO REAL</h3>
+            <p>Nesa atividade, eu e o Fernando, fizemos o trabaho sobre magnetismo no mundo real, e fizems sobre as máquinas de ressonância magnética juntos,foi bem tranquilo de fazer, e rápido, tivemos a aula e em seguida já fizemos o trabalho!</p>
+            <a href="https://canva.link/9qa592j0rynfk2o" target="_blank" class="btn-projeto">Ver Trabalho no Canva </a>
+            <p class="competencias">HABILIDADES DESENVOLVIDAS: C5 - H26 - H27 - H28 </p>
+        </div>
+
+        <div class="card-projeto">
+            <span class="tag">ROMUEL</span>
+            <h3>ATIVIDADE ENERGIA E SOCIEDADE</h3>
+            <p> Nessa ativiade do terceiro trimestre era para mim ter colocado a ativiade sobre a extração dos óleos esseciais, mas falei com o profesor Romuel e ele deixou substituir por essa ativiade sobre energia e sociedade, foi legal e fácil de apender, fiz uma apresentação simples no Canva para apresentar para a turma, gostei do tema trabalhado!</p>
+            <a href="https://canva.link/qss0p1u39b8asql" target="_blank" class="btn-projeto">Ver Trabalho no Canva </a>
+            <p class="competencias">HABILIDADES DESENVOLVIDAS: C1 - C2 - H1 - H2 - H5 - H9</p>
+        </div>
+
+         <div class="card-projeto">
+            <span class="tag">BEUX</span>
+            <h3>ATIVIDADE - CICLO BIOGEOQUÍMICOS</h3>
+            <p> Aprendemos sobre os ciclos biogeoquímicos, e foi bem legal, um pouco chatinho de entender mas foi legal, o meu trabalho eu fiz m infográfixco sobre o desmatamento das florestas.</p>
+            <a href="https://canva.link/40wmesy2gcn22ka" target="_blank" class="btn-projeto">Ver Trabalho no Canva </a>
+            <p class="competencias">HABILIDADES DESENVOLVIDAS: C1 - H4 - C2 - H11 - C5 - H24</p>
+        </div>
+    </div> 
+
+
+
+</body>
+</html>

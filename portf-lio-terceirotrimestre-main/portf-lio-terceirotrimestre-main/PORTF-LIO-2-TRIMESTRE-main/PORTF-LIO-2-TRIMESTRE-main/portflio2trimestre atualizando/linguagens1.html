@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linguagens | 1º Trimestre</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --preto-fundo: #0a0a0a;
+            --lilais-forte: #9B6DFF;
+            --lilais-escuro: #7A4DFF;
+            --branco-suave: #F4F4F4;
+            --cinza-card: #151515;
+            --fonte-destaque: 'Playfair Display', serif;
+            --fonte-sans: 'Inter', sans-serif;
+        }
+
+        body { 
+            font-family: var(--fonte-sans); 
+            background-color: var(--preto-fundo);
+            color: var(--branco-suave);
+            padding: 100px 8%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0; width: 100%; left: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(155, 109, 255, 0.2);
+
+            
+            
+            
+        }
+
+        .logo { font-family: var(--fonte-destaque); font-size: 1.5rem; text-decoration: none; color: var(--lilais-forte); font-style: italic; }
+
+        .voltar {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--lilais-forte);
+            font-weight: 600;
+            margin-bottom: 30px;
+            margin-top: 50px;
+            transition: 0.3s;
+        }
+        .voltar:hover { opacity: 0.7; transform: translateX(-5px); }
+
+        h2 { font-family: var(--fonte-destaque); font-size: 3rem; font-style: italic; margin-bottom: 40px; }
+        h2 span { color: var(--lilais-forte); }
+
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card-projeto {
+            background: var(--cinza-card);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(155, 109, 255, 0.1);
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card-projeto:hover {
+            transform: translateY(-10px);
+            border-color: var(--lilais-forte);
+        }
+
+        .tag { color: var(--lilais-forte); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        h3 { margin: 5px 0; font-family: var(--fonte-destaque); color: var(--branco-suave); font-size: 1.5rem; }
+        p { color: #ccc; font-size: 0.95rem; line-height: 1.6; }
+
+        .btn-projeto {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--lilais-forte);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .btn-projeto:hover { text-decoration: underline; }
+
+        .competencias {
+            font-size: 0.8rem;
+            color: var(--lilais-forte);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ISABELLA TONDIM</a>
+
+        <a href="contato.html">Fale Comigo</a>
+    </header>
+
+    <a href="trimestre1.html" class="voltar">← Voltar para Matérias</a>
+    
+    <h2>Linguagens e suas <span>Tecnologias</span></h2>
+
+    <div class="grid-projetos">
+        
+        <div class="card-projeto">
+            <span class="tag">NATALI</span>
+            <h3>VÍDEO A PAIXÃO SEGUNDO GH</h3>
+            <p>Neste trabalho em grupo, desenvolvemos um vídeo baseado na obra A Paixão Segundo G.H., com o objetivo de representar seus principais temas e acontecimentos de forma criativa. Buscamos mostrar os conflitos internos da personagem e a profundidade de suas reflexões, utilizando recursos visuais e interpretação. A atividade foi importante para compreender melhor a obra, além de estimular a criatividade, a análise e o trabalho em equipe.</p>
+            <a href="https://canva.link/e1uoviybgrcqpd7" target="_blank" class="btn-projeto">
+                Ver Trabalho no Canva 
+            </a>
+            <p class="competencias">H4 - H22</p>
+        </div>
+
+        <div class="card-projeto">
+            <span class="tag">CLÁUDIA</span>
+            <h3>GAME LITERÁRIO</h3>
+            <p>Neste trabalho, desenvolvemos um game literário sobre o Realismo, com o objetivo de explorar as principais características desse movimento de forma interativa. O jogo abordou temas como crítica social, análise psicológica e representação da realidade, tornando o aprendizado mais dinâmico. A atividade contribuiu para uma melhor compreensão do conteúdo, além de estimular a criatividade e o raciocínio.</p>
+            <a href="https://canva.link/gkunchr9xp8k6a6" target="_blank" class="btn-projeto">
+                Ver Trabalho no Canva 
+            </a>
+            <p class="competencias">H4 - H14 </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
